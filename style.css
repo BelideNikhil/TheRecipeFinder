@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito","sans-serif";
+}
+:root{
+    --main-color:#3C5186;
+    --secondary-color:#9B72AA;
+    --ternary-color:#c9bece;
+    --bg-color:#FFF5DE;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+}
+body{
+    text-align: center;
+    margin: 20px;
+    background: var(--bg-color);
+    color: var(--main-color);
+    overflow: scroll;
+    line-height: 1.3rem;
+}
+a{
+    text-decoration: none;
+}
+blockquote{
+    margin: 1rem 0;
+}
+
+.basic{
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#search_input{
+    width:600px;
+    height: 45px;
+    outline: 0;
+    border: 3px solid var(--secondary-color);
+    border-right: none;
+    padding: 5px 10px;
+    border-bottom-left-radius: 22px;
+    border-top-left-radius: 22px;
+}
+#search_input::placeholder{
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+.search_btn{
+    border: none;
+    width: 70px;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom-right-radius: 22px;
+    border-top-right-radius: 22px;
+    border: 3px solid var(--secondary-color);
+    border-left: none;
+    background: var(--ternary-color);
+}
+
+.search_result{
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: var(--ternary-color);
+}
+.search_result top{
+    width:100%;
+    overflow: hidden;
+}
+.top img{
+    width:100%;
+    display: block;
+}
+.bottom{
+    padding:15px;
+}
+.get-recipe,#youtube{
+    margin: auto;
+    display: block;
+    max-width: max-content;
+    font-weight: 700;
+    color:var(--bg-color);
+    background-color: var(--secondary-color);
+    letter-spacing: 1px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+/* responsiveness control area */
+@media screen and (min-width:500px) {
+    .main_result{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .search_result{
+        width: 80%;
+    }
+    .get-recipe,#youtube{
+        font-weight: 400;
+        padding: 5px 12px;
+    }
+}
+@media screen and (min-width:768px) {
+    .main_result{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 20px;
+        column-gap: 0;
+    }
+    .search_result{
+        width: 80%;
+    }
+}
+@media screen and (min-width:900px) {
+    .main_result{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+}
+.not_found{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+}
+.main_result >*{
+    margin-bottom: 10px;
+}
+
+.full_recipe{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:var(--ternary-color);
+    border-radius: 20px;
+    padding: 10px;
+    width:70%;
+    height: 75%;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.753) 0px 30px 90px;
+}
+.full_recipe::-webkit-scrollbar{
+    width: 8px;
+}
+.full_recipe::-webkit-scrollbar-thumb{
+    background-color: #3C5186;
+    border-radius: 30px;
+}
+.full_recipe #close_window{
+    cursor: pointer;
+    font-size: 22px;
+    background: var(--ternary-color);
+    border-radius: 20px;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.full_recipe h3,p{
+    padding-bottom: 12px;
+}
+.full_recipe img{
+    border-radius: 50%;
+    width: 20%;
+    margin: 1rem 0;
+}
+#internal_heading{
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    width: max-content;
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
